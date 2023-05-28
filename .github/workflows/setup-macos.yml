@@ -17,7 +17,7 @@ jobs:
       - uses: mamba-org/setup-micromamba@v1
         with:
           init-shell: bash
-          environment-name: test-env
+          environment-name: base
           create-args: >-
             python=3.11
       - name: Check environment and Python version
