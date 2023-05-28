@@ -22,4 +22,6 @@ jobs:
       - name: Check environment and Python version
         run: |
           python --version
+          micromamba --version
+          micromamba install python=3.11
           printenv
