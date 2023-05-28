@@ -24,4 +24,5 @@ jobs:
           python --version
           micromamba --version
           micromamba install python=3.11
+          python --version
           printenv
