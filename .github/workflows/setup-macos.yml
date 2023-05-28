@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:  
+  workflow_dispatch:
+
+jobs:
+  test-micromamba:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          init-shell: bash
+          create-args: >-
+            python=3.11
+      - name: Check environment and Python version
+        run: |
+          python --version
+          printenv
