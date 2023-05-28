@@ -17,12 +17,13 @@ jobs:
       - uses: mamba-org/setup-micromamba@v1
         with:
           init-shell: bash
+          environment-name: test-env
           create-args: >-
             python=3.11
       - name: Check environment and Python version
         run: |
           python --version
           micromamba --version
-          micromamba install python=3.11
+          micromamba activate test-env
           python --version
           printenv
